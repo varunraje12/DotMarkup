@@ -63,8 +63,53 @@ function State() {
   function prevPage() {
     router.push(`/seo/${router.query.state}?page=${router.query.page * 1 - 1}`);
   }
+
+  const schema1={
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "Dotmarkup.com",
+    "url": "https://dotmarkup.com/agencies",
+    "logo": "https://dotmarkup.com/wp-content/uploads/2021/02/cropped-Blue-and-Green-Consultancy-Logo-1-149x49.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "",
+      "contactType": "customer service",
+      "areaServed": ["IN","US"],
+      "availableLanguage": "en"
+    }
+  }
+  const schema2={
+    "@context": "https://schema.org/", 
+    "@type": "BreadcrumbList", 
+    "itemListElement": [{
+      "@type": "ListItem", 
+      "position": 1, 
+      "name": "Home",
+      "item": "https://dotmarkup.com/agency"  
+    },{
+      "@type": "ListItem", 
+      "position": 2, 
+      "name": "seo",
+      "item": "https://dotmarkup.com/agency/seo"  
+    },
+    {
+      "@type": "ListItem", 
+      "position": 3, 
+      "name": router.query.state,
+      "item": "https://dotmarkup.com/agency/seo"+router.query.state  
+    }
+  ]
+  }
   return (
     <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
+      />
       <Head>
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>

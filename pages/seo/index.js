@@ -43,8 +43,27 @@ function Index() {
     }
     name();
   }, []);
+  const schema1={
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "Dotmarkup.com",
+    "url": "https://dotmarkup.com/agencies",
+    "logo": "https://dotmarkup.com/wp-content/uploads/2021/02/cropped-Blue-and-Green-Consultancy-Logo-1-149x49.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "",
+      "contactType": "customer service",
+      "areaServed": ["IN","US"],
+      "availableLanguage": "en"
+    }
+  }
+  
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+      />
       <Head>
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
