@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
   if (!data) {
     const jsonDirectory = path.join(process.cwd(), "json");
-    const fileData = await readFile(jsonDirectory + "../../data.json", {
+    const fileData = await readFile(jsonDirectory + "/data.json", {
       encoding: "utf-8",
     });
     const jsonData = JSON.parse(fileData);

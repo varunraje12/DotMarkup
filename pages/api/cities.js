@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   // url == `http://209.38.244.1:3000/api/cities?states=${}&city=${}&page=1`
   if (!data) {
     const jsonDirectory = path.join(process.cwd(), "json");
-    const fileData = await readFile(jsonDirectory + "../../data.json", {
+    const fileData = await readFile(jsonDirectory + "/data.json", {
       encoding: "utf-8",
     });
     const jsonData = JSON.parse(fileData);
