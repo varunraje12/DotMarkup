@@ -6,7 +6,8 @@ import Services from '../../components/Services';
 // import Review from '../../components/Review';
 // import ServiceProvider from '../../components/ServiceProvider'
 import { useRouter } from 'next/router';
-import Servicedata from '../../indus.json'
+import Servicedata from '../../indus.json';
+import Head from "next/head";
 
 
 const Company = () => {
@@ -65,9 +66,9 @@ const Company = () => {
 
   return (
     <>
-<head>
+<Head>
 <meta name="robots" content="noindex,nofollow"></meta>
-</head>
+</Head>
       {/********** Listingcard Details ***********/}
       <div className='p-5 md:p-10 lg:p-20 '>
         <ListingcardDetails detail={oneDetail} />
