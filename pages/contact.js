@@ -9,6 +9,9 @@ function Contact() {
   return (
     <>
       {/* first div */}
+      <head>
+      <meta name="robots" content="noindex,nofollow"></meta>
+      </head>
       <div className='flex justify-center bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 h-96 w-full '>
         <h1 className='flex items-center text-center text-5xl font-bold text-white'>
           Contact Expert Reputation

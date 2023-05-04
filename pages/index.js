@@ -13,6 +13,9 @@ import { FaQuoteLeft } from 'react-icons/fa'
 const index = () => {
   return (
     <>
+    <head>
+    <meta name="robots" content="noindex,nofollow"></meta>
+    </head>
       <div>
         { /********** Hero *********/}
 

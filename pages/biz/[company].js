@@ -65,7 +65,9 @@ const Company = () => {
 
   return (
     <>
-
+<head>
+<meta name="robots" content="noindex,nofollow"></meta>
+</head>
       {/********** Listingcard Details ***********/}
       <div className='p-5 md:p-10 lg:p-20 '>
         <ListingcardDetails detail={oneDetail} />

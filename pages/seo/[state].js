@@ -68,6 +68,7 @@ function State() {
       <Head>
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
+        <meta name="robots" content="noindex,nofollow"></meta>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
         <h1 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h1>
