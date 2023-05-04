@@ -5,8 +5,8 @@ let data;
 const limit = 10;
 
 export default async function handler(req, res) {
-  // url == `http://localhost:3000/api/cities?states=${}&page=${}`
-  // url == `http://localhost:3000/api/cities?states=${}&city=${}&page=1`
+  // url == `http://209.38.244.1:3000/api/cities?states=${}&page=${}`
+  // url == `http://209.38.244.1:3000/api/cities?states=${}&city=${}&page=1`
   if (!data) {
     const jsonDirectory = path.join(process.cwd(), "json");
     const fileData = await readFile(jsonDirectory + "../../data.json", {

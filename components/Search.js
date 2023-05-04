@@ -17,7 +17,7 @@ const SearchMenu = () => {
 
   useEffect(() => {
     function getAllData() {
-      fetch("http://localhost:3000/api/staticdata")
+      fetch("http://209.38.244.1:3000/api/staticdata")
         .then((res) => {
           return res.json();
         })
@@ -31,9 +31,9 @@ const SearchMenu = () => {
 
   // useEffect(() => {
   //   if (dropDownValue) {
-  //     // router.push(`http://localhost:3000?cities=${dropDownValue}`);
+  //     // router.push(`http://209.38.244.1:3000?cities=${dropDownValue}`);
   //     router.push(
-  //       `http://localhost:3000/?cities=${input}&city=${dropDownValue}&page=1`
+  //       `http://209.38.244.1:3000/?cities=${input}&city=${dropDownValue}&page=1`
   //     );
   //   }
   // }, [dropDownValue]);
@@ -81,7 +81,7 @@ const SearchMenu = () => {
         </div>
         <button
           onClick={() => {
-            router.push(`http://localhost:3000/seo/${input}?page=1`),
+            router.push(`http://209.38.244.1:3000/seo/${input}?page=1`),
               dropdown();
           }}
           className='bg-[#5060FF] rounded-r-full flex w-12 shadow-sm justify-center items-center'

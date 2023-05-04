@@ -23,7 +23,7 @@ const Company = () => {
     const companyData = function () {
       if (router.query.company) {
         fetch(
-          `http://localhost:3000/api/company?title=${router.query.company}
+          `http://209.38.244.1:3000/api/company?title=${router.query.company}
           `
         )
           .then((res) => {
@@ -40,7 +40,7 @@ const Company = () => {
 
   useEffect(() => {
     const allCompanyData = function () {
-      fetch("http://localhost:3000/api/staticdata")
+      fetch("http://209.38.244.1:3000/api/staticdata")
         .then((res) => {
           return res.json();
         })

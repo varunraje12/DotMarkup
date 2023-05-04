@@ -7,11 +7,11 @@
 //   const { page } = router.query;
 
 //   function nextPage() {
-//     router.push(`http://localhost:3000/seo?page=${page ? page * 1 + 1 : 2}`);
+//     router.push(`http://209.38.244.1:3000/seo?page=${page ? page * 1 + 1 : 2}`);
 //   }
 
 //   function prevPage() {
-//     router.push(`http://localhost:3000/seo?page=${page * 1 - 1}`);
+//     router.push(`http://209.38.244.1:3000/seo?page=${page * 1 - 1}`);
 //   }
 //   useEffect(() => {
 //     function name() {

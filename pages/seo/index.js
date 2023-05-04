@@ -12,7 +12,7 @@ function Index() {
   useEffect(() => {
     function defaultData() {
       fetch(
-        `http://localhost:3000/api/staticdata?page=${router.query.page ? router.query.page : 1
+        `http://209.38.244.1:3000/api/staticdata?page=${router.query.page ? router.query.page : 1
         }`
       )
         .then((res) => {
@@ -27,13 +27,13 @@ function Index() {
 
   function nextPage() {
     router.push(
-      `http://localhost:3000?page=${router.query.page ? router.query.page * 1 + 1 : 2
+      `http://209.38.244.1:3000?page=${router.query.page ? router.query.page * 1 + 1 : 2
       }`
     );
   }
 
   function prevPage() {
-    router.push(`http://localhost:3000?page=${router.query.page * 1 - 1}`);
+    router.push(`http://209.38.244.1:3000?page=${router.query.page * 1 - 1}`);
   }
   useEffect(() => {
     function name() {

@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     res.status(400).json({ message: "invalid page number" });
   }
 
-  //get data on this URL -- http://localhost:3000/api/staticdata?page=1
+  //get data on this URL -- http://209.38.244.1:3000/api/staticdata?page=1
   //pagination
   const startIndex = (pageInt - 1) * limit;
   const stopIndex = startIndex + limit;
