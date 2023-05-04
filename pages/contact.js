@@ -2,16 +2,16 @@ import Image from 'next/image'
 import React from 'react'
 import svg from '../public/man.svg'
 import { useRouter } from 'next/router'
-
+import Head from "next/head";
 function Contact() {
   const router = useRouter()
   console.log(router)
   return (
     <>
       {/* first div */}
-      <head>
+      <Head>
       <meta name="robots" content="noindex,nofollow"></meta>
-      </head>
+      </Head>
       <div className='flex justify-center bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 h-96 w-full '>
         <h1 className='flex items-center text-center text-5xl font-bold text-white'>
           Contact Expert Reputation

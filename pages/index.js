@@ -8,14 +8,14 @@ import Handshake from '../public/Hand.png'
 import people from '../public/people.png'
 import BusinessCard from '../components/ui/BusinessCard'
 import { FaQuoteLeft } from 'react-icons/fa'
-
+import Head from "next/head";
 
 const index = () => {
   return (
     <>
-    <head>
+    <Head>
     <meta name="robots" content="noindex,nofollow"></meta>
-    </head>
+    </Head>
       <div>
         { /********** Hero *********/}
 
