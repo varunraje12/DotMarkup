@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import SearchMenu from "../../components/Search";
 import { useRouter } from "next/router";
 import ListingCard from "../../components/Listing/ListingCard";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Head from "next/head";
 
 function Index() {
   const [data, setData] = useState([]);
   const router = useRouter();
-  const [schema3,setschema3]=useState();
+  const [schema3, setschema3] = useState();
   useEffect(() => {
     function defaultData() {
       fetch(
@@ -28,63 +29,64 @@ function Index() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": data[0].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[0].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[0].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": data[1].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[1].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[1].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": data[2].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[2].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[2].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 4,
                 "name": data[3].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[3].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[3].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 5,
                 "name": data[4].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[4].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[4].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 6,
                 "name": data[5].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[5].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[5].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 7,
                 "name": data[6].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[6].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[6].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 8,
                 "name": data[7].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[7].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[7].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 9,
                 "name": data[8].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[8].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[8].company_title
               },
               {
                 "@type": "ListItem",
                 "position": 10,
                 "name": data[9].company_title,
-                "url": "https://www.dotmarkup.com/biz/"+data[9].company_title
+                "url": "https://www.dotmarkup.com/biz/" + data[9].company_title
               }
-            ]});
+            ]
+          });
         });
     }
     defaultData();
@@ -122,19 +124,19 @@ function Index() {
       "availableLanguage": "en"
     }
   }
-    const schema2={
-    "@context": "https://schema.org/", 
-    "@type": "BreadcrumbList", 
+  const schema2 = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
     "itemListElement": [{
-      "@type": "ListItem", 
-      "position": 1, 
+      "@type": "ListItem",
+      "position": 1,
       "name": "Home",
-      "item": "https://dotmarkup.com/agency"  
-    },{
-      "@type": "ListItem", 
-      "position": 2, 
+      "item": "https://dotmarkup.com/agency"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
       "name": "seo",
-      "item": "https://dotmarkup.com/agency/seo"  
+      "item": "https://dotmarkup.com/agency/seo"
     }]
   }
 
@@ -148,7 +150,7 @@ function Index() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
       />
-       <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
       />
@@ -163,16 +165,19 @@ function Index() {
           <p>We&apos;ve collected the data of over 7,840 seo companies to help you find the best seo company for your needs. Use DotMarkup to create a shortlist of your top seo contenders, and select best of them. </p>
         </div>
         {/*------ BreadCumb ---------*/}
-        <div className='flex gap-0'>
+        <div className='flex gap-0 pt-2'>
           <button
+            className="font-semibold capitalize"
             onClick={() => {
               router.push("/");
             }}
-          >{`Home >`}</button>
+          >Home</button>
+          <MdKeyboardArrowRight size={20} className="mt-1" />
+
           {router.asPath.split("/").map((element) => {
             return (
               <>
-                <div>{element}</div>
+                <div className="font-semibold capitalize text-blue-600">{element}</div>
               </>
             );
           })}
@@ -193,9 +198,9 @@ function Index() {
             );
           })}
         </div>
-        <div className='flex justify-center pt-8'>
+        <div className='flex justify-center pt-8 overflow-hidden'>
           {/* pagination */}
-          <div className='flex justify-center p-8'>
+          <div className='flex justify-center py-8'>
             <div className='flex gap-5'>
               <button
                 onClick={prevPage}
