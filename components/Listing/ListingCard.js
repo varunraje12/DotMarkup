@@ -9,11 +9,13 @@ import { AiOutlineMail } from "react-icons/ai";
 import ReactStars from "react-stars";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import defaultImg from '../../public/default.png'
 
 
 const ListingCard = ({ detail }) => {
   const router = useRouter()
   // const randomstar = (Math.random() * (5 - 3) + 3).toFixed(1)
+
 
   return (
     <>
@@ -22,7 +24,7 @@ const ListingCard = ({ detail }) => {
           <div className='pb-3'>
             {/* {detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title} */}
             <Image
-              alt='Company logo'
+              alt='Company Logo'
               src={`/Image/${detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title}.png`}
               width={80}
               height={80}

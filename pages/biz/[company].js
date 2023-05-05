@@ -53,7 +53,7 @@ const Company = () => {
                 filterData.push(element);
 
                 setAllData(prevState => [...prevState, element]);
-                console.log(allData)
+                // console.log(allData)
               }
             }
           });

@@ -4,12 +4,14 @@ import ListingCard from "../../components/Listing/ListingCard";
 import SearchMenu from "../../components/Search";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Head from "next/head";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 function State() {
   const router = useRouter();
   const [byStateData, setByStateData] = useState([]);
-  const [schema3,setschema3]=useState();
-  // console.log(router.query.state);
+  const [schema3, setschema3] = useState();
+  console.log(router);
+  console.log(router.pathname);
   // console.log(router.query.page);
   // console.log(byStateData.totalPages)
 
@@ -34,63 +36,64 @@ function State() {
                   "@type": "ListItem",
                   "position": 1,
                   "name": data[0].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[0].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[0].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": data[1].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[1].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[1].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": data[2].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[2].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[2].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 4,
                   "name": data[3].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[3].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[3].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 5,
                   "name": data[4].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[4].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[4].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 6,
                   "name": data[5].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[5].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[5].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 7,
                   "name": data[6].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[6].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[6].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 8,
                   "name": data[7].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[7].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[7].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 9,
                   "name": data[8].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[8].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[8].company_title
                 },
                 {
                   "@type": "ListItem",
                   "position": 10,
                   "name": data[9].company_title,
-                  "url": "https://www.dotmarkup.com/biz/"+data[9].company_title
+                  "url": "https://www.dotmarkup.com/biz/" + data[9].company_title
                 }
-              ]});
+              ]
+            });
             // console.log(data);
           });
       }
@@ -176,7 +179,7 @@ function State() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
       />
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
       />
@@ -190,25 +193,30 @@ function State() {
         <p>We&apos;ve collected the data of over 7,840 seo companies to help you find the best seo company for your needs. Use DotMarkup to create a shortlist of your top seo contenders, and select best of them. </p>
 
         {/*------- BreadCumb -----------*/}
-        <div className='py-2'>
+        <div className='flex py-2'>
           <button
             onClick={() => {
               router.push("/");
             }}
-          >{`Home >`}</button>
+          >Home</button>
+          <MdKeyboardArrowRight size={20} className="mt-1" />
           <button
+            className="font-semibold capitalize text-blue-600"
             onClick={() => {
               router.push(`/${router.route.trim().split("/")[1]}`);
             }}
           >
             {router.route.trim().split("/")[1]}
           </button>
+          <MdKeyboardArrowRight size={20} className="mt-1" />
+
           <button
-          // onClick={() => {
-          //   router.push(`/${router.query.state}`);
-          // }}
+            // onClick={() => {
+            //   router.push(`/${router.query.state}`);
+            // }}
+            className="font-semibold capitalize text-blue-600"
           >
-            {`>${router.query.state}`}
+            {`${router.query.state}`}
           </button>
         </div>
 

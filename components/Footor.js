@@ -56,7 +56,7 @@ const Footor = () => {
               <h3>Term of Service</h3>
               <h3 className='cursor-pointer'>2023 DotMarkup <span>&#169;</span>All rights reserved</h3>
             </div>
-            <div className="flex items-center justify-start lg:justify-end gap-6 pt-3">
+            <div className="flex items-center justify-start lg:justify-end gap-4 sm:gap-6 pt-3">
               <a href=""><AiOutlineInstagram size={40} className='text-pink-500 bg-white cursor-pointer' /></a>
               <a href=''><TfiLinkedin size={40} className='text-blue-700 bg-white  cursor-pointer' /></a>
               <a href=""> <AiFillYoutube size={40} className='text-red-500 bg-white  cursor-pointer' /></a>
