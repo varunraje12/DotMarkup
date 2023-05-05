@@ -122,6 +122,21 @@ function Index() {
       "availableLanguage": "en"
     }
   }
+    const schema2={
+    "@context": "https://schema.org/", 
+    "@type": "BreadcrumbList", 
+    "itemListElement": [{
+      "@type": "ListItem", 
+      "position": 1, 
+      "name": "Home",
+      "item": "https://dotmarkup.com/agency"  
+    },{
+      "@type": "ListItem", 
+      "position": 2, 
+      "name": "seo",
+      "item": "https://dotmarkup.com/agency/seo"  
+    }]
+  }
 
   return (
     <>
