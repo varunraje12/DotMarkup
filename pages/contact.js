@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Head from "next/head";
 function Contact() {
   const router = useRouter()
-  console.log(router)
+  // console.log(router)
   return (
     <>
       {/* first div */}
@@ -35,14 +35,14 @@ function Contact() {
                 <h2 className='text-md md:text-3xl font-bold '>
                   You Can Receive Proposals From Up To 5 Verified Agencies
                 </h2>
-                <p className=' text-lg md:text-xl leading-normal mt-4'>
+                <p className='pr-4 text-lg md:text-xl leading-normal mt-4'>
                   Tell us about your project and we will connect you with up to
                   5 verified agencies having the most competitive proposals
                   based on your criteria and goals.
                 </p>
                 <button
                   type='submit'
-                  className='text-white bg-blue-700 hover:bg-blue-800 font-semibold rounded-full text-md px-5 md:px-6 py-3 mt-6 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                  className='text-white bg-blue-700 hover:bg-blue-800 font-semibold rounded-full text-sm lg:text-md px-5 md:px-6 py-3 mt-6 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
                 >
                   Submit Your Project For<span className='uppercase'> Free {'>'}</span>
                 </button>
@@ -50,8 +50,8 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className='w-full lg:w-2/4 p-10 -mt-20'>
-          <div className='shadow-lg p-4 rounded-md bg-white '>
+        <div className='w-full lg:w-2/4 p-4 lg:p-10 -mt-20'>
+          <div className='shadow-lg p-2 lg:p-4 rounded-md bg-white '>
             <form>
               <div className=''>
                 <div>
@@ -138,7 +138,7 @@ function Contact() {
                   </label>
                   <button
                     type='submit'
-                    className='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-full text-sm px-8 py-2.5 text-center'
+                    className='text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-full text-sm px-8 py-2.5 mb-4 text-center'
                   >
                     Submit
                   </button>
@@ -150,7 +150,7 @@ function Contact() {
       </div>
       {/* third div */}
       <div className='flex justify-between p-8 bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-sky-400 to-blue-800'>
-        <div className='3/4 '>
+        <div>
           <h2 className='text-3xl text-blue-800 font-bold p-2'>
             Sign Up for Our Newsletter
           </h2>
@@ -212,7 +212,6 @@ function Contact() {
             </button>
           </div>
         </div>
-        <div className='1/4'></div>
       </div>
     </>
   )
