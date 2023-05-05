@@ -8,6 +8,7 @@ import Head from "next/head";
 function State() {
   const router = useRouter();
   const [byStateData, setByStateData] = useState([]);
+  const [schema3,setschema3]=useState();
   // console.log(router.query.state);
   // console.log(router.query.page);
   // console.log(byStateData.totalPages)
@@ -25,6 +26,71 @@ function State() {
           })
           .then((data) => {
             setByStateData(data);
+            setschema3({
+              "@context": "https://schema.org/",
+              "@type": "ItemList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": data[0].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[0].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": data[1].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[1].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": data[2].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[2].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": data[3].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[3].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "name": data[4].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[4].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "name": data[5].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[5].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 7,
+                  "name": data[6].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[6].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 8,
+                  "name": data[7].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[7].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 9,
+                  "name": data[8].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[8].company_title
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 10,
+                  "name": data[9].company_title,
+                  "url": "https://www.dotmarkup.com/biz/"+data[9].company_title
+                }
+              ]});
             // console.log(data);
           });
       }
@@ -109,6 +175,10 @@ function State() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
+      />
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
       />
       <Head>
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
