@@ -8,9 +8,9 @@ const Hero = () => {
     <div className="lg:flex lg:items-center min-h-screen w-full">
 
       <div className='w-full lg:w-1/2 items-center px-5 lg:px-16 py-5 lg:py-0'>
-        <h1 className='text-4xl font-poppins font-bold text-gray-900'>The
+        <h2 className='text-4xl font-poppins font-bold text-gray-900'>The
           Ultimate Resource
-        </h1>
+        </h2>
         <p className='text-4xl font-poppins font-bold text-gray-900'>
           for Finding SEO Agencies
         </p>

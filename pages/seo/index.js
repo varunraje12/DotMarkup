@@ -108,7 +108,7 @@ function Index() {
     }
     name();
   }, []);
-  const schema1={
+  const schema1 = {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "Dotmarkup.com",
@@ -118,26 +118,11 @@ function Index() {
       "@type": "ContactPoint",
       "telephone": "",
       "contactType": "customer service",
-      "areaServed": ["IN","US"],
+      "areaServed": ["IN", "US"],
       "availableLanguage": "en"
     }
   }
-  const schema2={
-    "@context": "https://schema.org/", 
-    "@type": "BreadcrumbList", 
-    "itemListElement": [{
-      "@type": "ListItem", 
-      "position": 1, 
-      "name": "Home",
-      "item": "https://dotmarkup.com/agency"  
-    },{
-      "@type": "ListItem", 
-      "position": 2, 
-      "name": "seo",
-      "item": "https://dotmarkup.com/agency/seo"  
-    }]
-  }
-  
+
   return (
     <>
       <script
@@ -159,11 +144,28 @@ function Index() {
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
         <div>
-          <h1 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h1>
+          <h2 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h2>
           <p>We&apos;ve collected the data of over 7,840 seo companies to help you find the best seo company for your needs. Use DotMarkup to create a shortlist of your top seo contenders, and select best of them. </p>
         </div>
+        {/*------ BreadCumb ---------*/}
+        <div className='flex gap-0'>
+          <button
+            onClick={() => {
+              router.push("/");
+            }}
+          >{`Home >`}</button>
+          {router.asPath.split("/").map((element) => {
+            return (
+              <>
+                <div>{element}</div>
+              </>
+            );
+          })}
+        </div>
+
         <SearchMenu />
       </div>
+
       <div className='px-5 md:px-10 lg:px-20 font-semibold'>Total Record: {data.totalPages * 10}</div>
       <div className="px-5 md:px-10 lg:px-20 text-2xl font-semibold pb-1">List of Top {router.query.state} SEO Agencies</div>
       <div>
@@ -175,7 +177,7 @@ function Index() {
               </>
             );
           })}
-        </div >
+        </div>
         <div className='flex justify-center pt-8'>
           {/* pagination */}
           <div className='flex justify-center p-8'>

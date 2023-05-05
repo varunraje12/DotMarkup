@@ -130,7 +130,7 @@ function State() {
     router.push(`/seo/${router.query.state}?page=${router.query.page * 1 - 1}`);
   }
 
-  const schema1={
+  const schema1 = {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "Dotmarkup.com",
@@ -140,35 +140,35 @@ function State() {
       "@type": "ContactPoint",
       "telephone": "",
       "contactType": "customer service",
-      "areaServed": ["IN","US"],
+      "areaServed": ["IN", "US"],
       "availableLanguage": "en"
     }
   }
-  const schema2={
-    "@context": "https://schema.org/", 
-    "@type": "BreadcrumbList", 
+  const schema2 = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
     "itemListElement": [{
-      "@type": "ListItem", 
-      "position": 1, 
+      "@type": "ListItem",
+      "position": 1,
       "name": "Home",
-      "item": "https://dotmarkup.com/agency"  
-    },{
-      "@type": "ListItem", 
-      "position": 2, 
+      "item": "https://dotmarkup.com/agency"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
       "name": "seo",
-      "item": "https://dotmarkup.com/agency/seo"  
+      "item": "https://dotmarkup.com/agency/seo"
     },
     {
-      "@type": "ListItem", 
-      "position": 3, 
+      "@type": "ListItem",
+      "position": 3,
       "name": router.query.state,
-      "item": "https://dotmarkup.com/agency/seo"+router.query.state  
+      "item": "https://dotmarkup.com/agency/seo" + router.query.state
     }
-  ]
+    ]
   }
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
       />
@@ -186,8 +186,32 @@ function State() {
         <meta name="robots" content="noindex,nofollow"></meta>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
-        <h1 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h1>
+        <h2 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h2>
         <p>We&apos;ve collected the data of over 7,840 seo companies to help you find the best seo company for your needs. Use DotMarkup to create a shortlist of your top seo contenders, and select best of them. </p>
+
+        {/*------- BreadCumb -----------*/}
+        <div className='py-2'>
+          <button
+            onClick={() => {
+              router.push("/");
+            }}
+          >{`Home >`}</button>
+          <button
+            onClick={() => {
+              router.push(`/${router.route.trim().split("/")[1]}`);
+            }}
+          >
+            {router.route.trim().split("/")[1]}
+          </button>
+          <button
+          // onClick={() => {
+          //   router.push(`/${router.query.state}`);
+          // }}
+          >
+            {`>${router.query.state}`}
+          </button>
+        </div>
+
         <SearchMenu />
       </div>
       <div className='px-5 md:px-10 lg:px-20 font-semibold'>Total Record: {byStateData.totalPages * 10}</div>

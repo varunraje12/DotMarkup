@@ -10,12 +10,12 @@ function Contact() {
     <>
       {/* first div */}
       <Head>
-      <meta name="robots" content="noindex,nofollow"></meta>
+        <meta name="robots" content="noindex,nofollow"></meta>
       </Head>
       <div className='flex justify-center bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 h-96 w-full '>
-        <h1 className='flex items-center text-center text-5xl font-bold text-white'>
+        <h2 className='flex items-center text-center text-5xl font-bold text-white'>
           Contact Expert Reputation
-        </h1>
+        </h2>
       </div>
       {/* second div */}
       <div className='flex flex-col lg:flex-row justify-center items-center  '>
