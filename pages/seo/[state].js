@@ -176,10 +176,10 @@ function State() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
       />
-       {schema3?<script
+    <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
-      />:<></>}
+      />
       <Head>
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
