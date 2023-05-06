@@ -3,7 +3,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper";
-import logo from '../public/Digital-Silk-logo-listing.jpg'
 import Image from 'next/image';
 import { IoLocationSharp } from 'react-icons/io5'
 import { AiFillTool } from 'react-icons/ai'
@@ -11,32 +10,50 @@ import { BsFillBriefcaseFill } from 'react-icons/bs'
 import { BsDatabaseFillAdd } from 'react-icons/bs'
 import { useRouter } from "next/router";
 
-function CardCarousel({ detail }) {
+
+function CardCarousel({ details }) {
   const router = useRouter()
   SwiperCore.use([Autoplay]);
+
   return (
     <>
       <Swiper
         autoplay={{
           delay: 2000,
         }}
+
+        breakpoints={{
+          // when window width is >= 640px
+          320: {
+            slidesPerView: 1,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 2,
+          },
+          // when window width is >= 640px
+          640: {
+            slidesPerView: 3,
+          },
+        }}
         slidesPerView={3}
-        // loop={true}
-        onAutoplayResume={true}
+
       >
-        <SwiperSlide>
-          <>
+        {details.map((detail, index) => {
+
+
+          return (<SwiperSlide key={index}>
             <div onClick={() => {
               router.push(`/biz/` + detail.company_title);
-            }} className='flex justify-between items-center bg-white hover:border-[#5060FF] border-[2px] rounded-sm w-full cursor-pointer'>
+            }} className='flex justify-between min-h-[270px] max-h-[270px] bg-white hover:border-[#5060FF] border-[2px] rounded-sm w-full cursor-pointer'>
               <div className='w-1/2 p-2'>
                 <Image src={`/Image/${detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title}.png`}
                   alt="logo"
                   width={80}
                   height={80}
-                  className='object-contain'
+                  className=' object-cover'
                 />
-                <p className='font-bold text-2xl tracking-tight text-gray-900 dark:text-black'>{detail?.company_title}</p>
+                <p className='font-bold text-xl p-2 tracking-tight text-gray-900 dark:text-black'>{detail?.company_title}</p>
                 <div className='flex gap-2'>
                   <IoLocationSharp className='mt-1 ' />
                   <p>{detail?.locality}</p>
@@ -56,15 +73,15 @@ function CardCarousel({ detail }) {
               </div>
 
               <div className='w-1/2 p-2'>
-                <p className="truncate-2-line">{detail?.description}</p>
-                <div className='border border-gray-400 p-2 text-center uppercase cursor-pointer'>
+                <p className="truncate-2-line p-6">{detail?.description}</p>
+                <div className='border border-gray-400 p-2 mt-3 text-center uppercase cursor-pointer'>
                   View Profile
                 </div>
               </div>
             </div>
-          </>
-        </SwiperSlide>
-      </Swiper >
+          </SwiperSlide>)
+        })}
+      </Swiper>
     </>
   );
 }

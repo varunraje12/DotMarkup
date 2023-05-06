@@ -10,8 +10,8 @@ function State() {
   const router = useRouter();
   const [byStateData, setByStateData] = useState([]);
   const [schema3, setschema3] = useState();
-  console.log(router);
-  console.log(router.pathname);
+  // console.log(router);
+  // console.log(router.pathname);
   // console.log(router.query.page);
   // console.log(byStateData.totalPages)
 
