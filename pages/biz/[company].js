@@ -16,9 +16,9 @@ const Company = () => {
   const [allData, setAllData] = useState([]);
   const servicedetail = Servicedata.details
   // console.log(router.query.company)
-
-
   // console.log(allData);
+
+
   useEffect(() => {
     const companyData = function () {
       if (router.query.company) {
@@ -122,14 +122,14 @@ const Company = () => {
       <div className='md:px-20 p-5 '>
         <div className='text-2xl font-bold'>More Agenices</div>
         <div className=''>
-          {allData.slice(0, 6).map((element) => {
-            return (
-              <>
-                <CardCarousel detail={element} />
+          {/* {allData.slice(0, 6).map((element) => { */}
+          {/* return ( */}
+          {/* <> */}
+          <CardCarousel details={allData} />
 
-              </>
-            )
-          })}
+          {/* </> */}
+          {/* ) */}
+          {/* })} */}
         </div>
       </div>
 
