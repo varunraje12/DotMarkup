@@ -12,7 +12,7 @@ function State() {
   const [schema3, setschema3] = useState();
   // console.log(router);
   // console.log(router.pathname);
-  // console.log(router.query.page);
+  // console.log(router.query.state);
   // console.log(byStateData.totalPages)
 
   // In search data fetching
@@ -187,6 +187,7 @@ function State() {
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
         <meta name="robots" content="noindex,nofollow"></meta>
+        <link rel='canonical' href={`/seo/${router.query.state}`} key='canonical'></link>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
         <h2 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h2>
@@ -209,7 +210,6 @@ function State() {
             {router.route.trim().split("/")[1]}
           </button>
           <MdKeyboardArrowRight size={20} className="mt-1" />
-
           <button
             // onClick={() => {
             //   router.push(`/${router.query.state}`);
@@ -222,7 +222,7 @@ function State() {
 
         <SearchMenu />
       </div>
-      <div className='px-5 md:px-10 lg:px-20 font-semibold'>Total Record: {byStateData.totalPages * 10}</div>
+      <div className='px-5 md:px-10 lg:px-20 font-semibold mt-3'>Total Agencies: {byStateData.totalPages * 10}</div>
       <div className="px-5 md:px-10 lg:px-20 text-2xl font-semibold pb-1">List of Top {router.query.state} SEO Agencies</div>
       <div className='px-5 md:px-10 lg:px-20 space-y-7 mb-11'>
         {byStateData?.data?.map((element) => {
