@@ -82,8 +82,13 @@ const SearchMenu = () => {
         </div>
         <button
           onClick={() => {
+            if(input.indexOf('?')==-1){
             router.push(`http://209.38.244.1:3000/seo/${input}?page=1`),
               dropdown();
+            }
+            else{
+            alert("invalid search value");
+            }
           }}
           className='bg-[#5060FF] rounded-r-full flex w-12 shadow-sm justify-center items-center'
         >
