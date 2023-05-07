@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 const SearchMenu = () => {
   const [input, setInput] = useState();
   const [data, setData] = useState([]);
+    const [t, st] = useState(false);
   const uniqueSet = new Set();
   const states = new Set();
   const cities = {};
@@ -83,17 +84,20 @@ const SearchMenu = () => {
         <button
           onClick={() => {
             if(input.indexOf('?')==-1){
+              st(false);
             router.push(`http://209.38.244.1:3000/seo/${input}?page=1`),
               dropdown();
             }
             else{
-            alert("invalid search value");
+              
+            st(true);
             }
           }}
           className='bg-[#5060FF] rounded-r-full flex w-12 shadow-sm justify-center items-center'
         >
           <BiSearchAlt2 />
         </button>
+{t?<div className='px-5 md:px-10 lg:px-20 font-semibold mt-3'>Invalid Search</div>:<></>}
       </div>
       {/* ----------- Dropdown ------------------- */}
       <div className="bg-gray-200">
