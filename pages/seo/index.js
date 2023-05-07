@@ -158,6 +158,7 @@ function Index() {
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
         <meta name="robots" content="noindex,nofollow"></meta>
+        <link rel='canonical' href='http://209.38.244.1:3000/seo' key='canonical'></link>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
         <div>
@@ -174,7 +175,7 @@ function Index() {
           >Home</button>
           <MdKeyboardArrowRight size={20} className="mt-1" />
 
-          {router.asPath.split("/").map((element) => {
+          {router.route.split("/").map((element) => {
             return (
               <>
                 <div className="font-semibold capitalize text-blue-600">{element}</div>
@@ -186,7 +187,7 @@ function Index() {
         <SearchMenu />
       </div>
 
-      <div className='px-5 md:px-10 lg:px-20 font-semibold'>Total Record: {data.totalPages * 10}</div>
+      <div className='px-5 md:px-10 lg:px-20 font-semibold mt-2'>Total Agencies: {data.totalPages * 10}</div>
       <div className="px-5 md:px-10 lg:px-20 text-2xl font-semibold pb-1">List of Top {router.query.state} SEO Agencies</div>
       <div>
         <div className='px-5 md:px-10 lg:px-20 space-y-7 mb-11'>
@@ -309,7 +310,7 @@ function Index() {
             </div>
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 }

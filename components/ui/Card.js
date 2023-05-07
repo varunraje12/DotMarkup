@@ -8,11 +8,11 @@ const Card = (props) => {
       <div className='w-auto p-6 bg-white border border-gray-200 hover:border-blue-500 rounded-xl shadow dark:bg-white'>
         <div>
           <div className='flex gap-3'>
-            <div>
+            {/* <div>
               <Image src={props.icon} alt=' picture' width={60} height={60} />
-            </div>
+            </div> */}
             <div>
-              <h2 className='font-bold text-2xl tracking-tight text-gray-900 dark:text-black'>
+              <h2 className='font-bold text-2xl ml-20 tracking-tight text-gray-900 dark:text-black'>
                 {props?.heading}
               </h2>
             </div>

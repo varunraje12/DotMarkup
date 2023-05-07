@@ -21,13 +21,13 @@ const Footor = () => {
             <div>
               <h3 className="text-lg font-semibold">About Dot Mark Up</h3>
               <div className="flex flex-col gap-2 py-2 text-gray-800">
-                <Link href='/'>Our Story</Link>
+                <Link href='#'>Our Story</Link>
                 {/* <Link href='/'>Careers</Link>
                 <Link href='/'>News & Press</Link>
                 <Link href='/'>Research Methodology</Link> */}
               </div>
             </div>
-            <div>
+            {/* <div>
               <h3 className="text-lg font-semibold">Buyers</h3>
               <div className="flex flex-col gap-2 py-2 text-gray-800">
                 <Link href='/'>Browse All Directories</Link>
@@ -37,8 +37,8 @@ const Footor = () => {
                 <Link href='/'>Concierge Service</Link>
                 <Link href='/'>Buyer FAQs</Link>
               </div>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <h3 className="text-lg font-semibold">Service Provider</h3>
               <div className="flex flex-col gap-2 py-2 text-gray-800">
                 <Link href='/'>Service Provider Guide</Link>
@@ -47,7 +47,7 @@ const Footor = () => {
                 <Link href='/'>Marketing Opportunities</Link>
                 <Link href='/'>Service Provider FAQs</Link>
               </div>
-            </div>
+            </div> */}
           </div>
           <hr className="" />
           <div className='flex flex-col lg:items-center lg:flex-row lg:justify-between'>
@@ -57,11 +57,11 @@ const Footor = () => {
               <h3 className='cursor-pointer'>2023 DotMarkup <span>&#169;</span>All rights reserved</h3>
             </div>
             <div className="flex items-center justify-start lg:justify-end gap-6 pt-3">
-              <a href=""><AiOutlineInstagram size={40} className='text-pink-500 bg-white cursor-pointer' /></a>
-              <a href=''><TfiLinkedin size={40} className='text-blue-700 bg-white  cursor-pointer' /></a>
-              <a href=""> <AiFillYoutube size={40} className='text-red-500 bg-white  cursor-pointer' /></a>
-              <a href=""> <AiOutlineTwitter size={40} className='text-blue-500 bg-white cursor-pointer' /></a>
-              <a href=""> <FaFacebookF size={40} className='text-blue-500 bg-white cursor-pointer' /></a>
+              <a href='#'><AiOutlineInstagram size={40} className='text-pink-500 bg-white cursor-pointer' /></a>
+              <a href='#'><TfiLinkedin size={40} className='text-blue-700 bg-white  cursor-pointer' /></a>
+              <a href='#'> <AiFillYoutube size={40} className='text-red-500 bg-white  cursor-pointer' /></a>
+              <a href='#'> <AiOutlineTwitter size={40} className='text-blue-500 bg-white cursor-pointer' /></a>
+              <a href='#'> <FaFacebookF size={40} className='text-blue-500 bg-white cursor-pointer' /></a>
             </div>
           </div>
         </div>

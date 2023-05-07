@@ -16,7 +16,6 @@ const Company = () => {
   const [allData, setAllData] = useState([]);
   const servicedetail = Servicedata.details
   // console.log(router.query.company)
-  // console.log(allData);
 
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const Company = () => {
                 filterData.push(element);
 
                 setAllData(prevState => [...prevState, element]);
-                console.log(allData)
+                // console.log(allData)
               }
             }
           });
@@ -77,7 +76,7 @@ const Company = () => {
 
 
       {/********** Services ***********/}
-      <div className='px-5 md:px-10 lg:px-20 text-2xl font-bold'>More Services</div>
+      <div className='px-5 md:px-10 lg:px-20 text-2xl font-bold'>{oneDetail.company_title} Services</div>
       {/* <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 px-5 md:px-10 lg:px-20'> */}
       {
         servicedetail.map((e) => {
@@ -122,14 +121,7 @@ const Company = () => {
       <div className='md:px-20 p-5 '>
         <div className='text-2xl font-bold'>More Agenices</div>
         <div className=''>
-          {/* {allData.slice(0, 6).map((element) => { */}
-          {/* return ( */}
-          {/* <> */}
           <CardCarousel details={allData} />
-
-          {/* </> */}
-          {/* ) */}
-          {/* })} */}
         </div>
       </div>
 

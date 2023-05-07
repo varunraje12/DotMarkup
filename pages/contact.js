@@ -3,6 +3,7 @@ import React from 'react'
 import svg from '../public/man.svg'
 import { useRouter } from 'next/router'
 import Head from "next/head";
+import Link from 'next/link';
 function Contact() {
   const router = useRouter()
   // console.log(router)
@@ -10,7 +11,9 @@ function Contact() {
     <>
       {/* first div */}
       <Head>
+        <title>DotMarkup | Contact</title>
         <meta name="robots" content="noindex,nofollow"></meta>
+        <link rel='canonical' href='http://209.38.244.1:3000/contact' key='canonical'></link>
       </Head>
       <div className='flex justify-center bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 h-96 w-full '>
         <h2 className='flex items-center text-center text-5xl font-bold text-white'>
@@ -50,7 +53,7 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className='w-full lg:w-2/4 p-4 lg:p-10 -mt-20'>
+        {/* <div className='w-full lg:w-2/4 p-4 lg:p-10 -mt-20'>
           <div className='shadow-lg p-2 lg:p-4 rounded-md bg-white '>
             <form>
               <div className=''>
@@ -146,10 +149,14 @@ function Contact() {
               </div>
             </form>
           </div>
+        </div> */}
+
+        <div className='w-full lg:w-2/4 p-4 lg:p-10 text-center'>
+          <span className='text-2xl font-poppins'>Get in Touch With Us at :<br /></span><Link href='#' className='font-poppins text-xl text-blue-400 hover:underline'>Yngrowth1@gmail.com</Link>
         </div>
       </div>
-      {/* third div */}
-      <div className='flex justify-between p-8 bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-sky-400 to-blue-800'>
+      {/*------------- News Letter---------- */}
+      {/* <div className='flex justify-between p-8 bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-sky-400 to-blue-800'>
         <div>
           <h2 className='text-3xl text-blue-800 font-bold p-2'>
             Sign Up for Our Newsletter
@@ -212,7 +219,7 @@ function Contact() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

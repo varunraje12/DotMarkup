@@ -75,6 +75,7 @@ const SearchMenu = () => {
               setInput(e.target.value);
             }}
             type='text'
+            pattern="[A-Za-z]{3}"
             placeholder='Search by Category, Company or ...'
             className='rounded-l-full px-14 py-2 w-full bg-white shadow-sm focus:outline-blue-500 border-2'
           />
@@ -141,7 +142,7 @@ const SearchMenu = () => {
           )}
         </div>
       </div> */}
-      <div className='flex justify-between py-3'>
+      {/* <div className='flex justify-between py-3'>
         <div>
           <span>Jobs For You</span>
           <span className='text-[#5060FF] font-semibold'>&nbsp;Popular</span>
@@ -153,7 +154,7 @@ const SearchMenu = () => {
             <MdArrowDropDown />
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
