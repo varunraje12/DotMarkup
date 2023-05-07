@@ -13,9 +13,10 @@ import Head from "next/head";
 const index = () => {
   return (
     <>
-    <Head>
-    <meta name="robots" content="noindex,nofollow"></meta>
-    </Head>
+      <Head>
+        <meta name="robots" content="noindex,nofollow"></meta>
+        <link rel='canonical' href='http://209.38.244.1:3000/' key='canonical'></link>
+      </Head>
       <div>
         { /********** Hero *********/}
 
