@@ -85,7 +85,7 @@ const SearchMenu = () => {
           onClick={() => {
             if(input.indexOf('?')==-1){
               st(false);
-            router.push(`http://209.38.244.1:3000/seo/${input}?page=1`),
+            router.push(`http://209.38.244.1:3000/seo/${input}`),
               dropdown();
             }
             else{

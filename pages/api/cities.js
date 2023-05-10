@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   }
 
   //pagination
-  const startIndex = (pageInt - 1) * limit;
+  const startIndex = (pageInt) * limit;
   const stopIndex = startIndex + limit;
   const totalPages = Math.ceil(filterData.length / limit);
   res

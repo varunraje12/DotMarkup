@@ -9,25 +9,31 @@ import { AiOutlineMail } from "react-icons/ai";
 import ReactStars from "react-stars";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 
 const ListingCard = ({ detail }) => {
-  const router = useRouter()
-  // const randomstar = (Math.random() * (5 - 3) + 3).toFixed(1)
-
+  const router = useRouter();
+  const [n,sn]=useState(false);
   return (
     <>
+
       <div className='flex flex-col lg:flex-row gap-5 border-[3px] rounded-2xl hover:border-[#5060FF] p-3 bg-white'>
         <div className='w-full lg:w-[15%]'>
           <div className='pb-3'>
             {/* {detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title} */}
-            <Image
-              alt='Company logo'
-              src={`/Image/${detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title}.png`}
+            {n?<Image
+              src={`/logo.jpg`}
               width={80}
               height={80}
               className='object-contain'
-            />
+            />:<Image
+            onError={()=>{sn(true)}}
+             src={`/Image/${detail?.company_title?.includes(' ') ? detail?.company_title.split(' ').join('_') : detail?.company_title}.png`}
+             width={80}
+             height={80}
+             className='object-contain'
+           />}
             <h2 className='block lg:hidden font-poppins font-bold text-2xl text-[#5060FF]'>
               {detail?.company_title}
             </h2>

@@ -10,6 +10,7 @@ function State() {
   const router = useRouter();
   const [byStateData, setByStateData] = useState([]);
   const [schema3, setschema3] = useState();
+  const [be,sbe]=useState(false);
   // console.log(router);
   // console.log(router.pathname);
   // console.log(router.query.state);
@@ -17,16 +18,23 @@ function State() {
 
   // In search data fetching
   useEffect(() => {
+    console.log(router.query.page);
     const byStateSearch = function () {
       if (router.query.state) {
         fetch(
-          `http://209.38.244.1:3000/api/cities?states=${router.query.state}&page=${router.query.page ? router.query.page : 1
+          `http://209.38.244.1:3000/api/cities?states=${router.query.state}&page=${router.query.page ? router.query.page : 0
           }`
         )
           .then((res) => {
             return res.json();
           })
           .then((data) => {
+            if(data.totalPages==0){
+              sbe(true);
+            }
+            else{
+              sbe(false);
+            }
             setByStateData(data);
             setschema3({
               "@context": "https://schema.org/",
@@ -126,11 +134,16 @@ function State() {
   }, []);
 
   function nextPage() {
-    router.push(`/seo/${router.query.state}?page=${router.query.page * 1 + 1}`);
+    router.push(`/seo/${router.query.state}?page=${router.query.page?router.query.page * 1 + 1:1}`);
   }
 
   function prevPage() {
+    if(router.query.page==1){
+      router.push(`/seo/${router.query.state}`);
+    }
+    else{
     router.push(`/seo/${router.query.state}?page=${router.query.page * 1 - 1}`);
+    }
   }
 
   const schema1 = {
@@ -190,11 +203,11 @@ function State() {
         <link rel='canonical' href={`/seo/${router.query.state}`} key='canonical'></link>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
-        <h2 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h2>
+        {!be?<h2 className='text-4xl font-poppins font-bold py-5'>Best SEO Agencies{router.query.state ? ` ${`In\xa0${router.query.state}`}` : ''}</h2>:<></>}
         <p>We&apos;ve collected the data of over 7,840 seo companies to help you find the best seo company for your needs. Use DotMarkup to create a shortlist of your top seo contenders, and select best of them. </p>
 
         {/*------- BreadCumb -----------*/}
-        <div className='flex py-2'>
+        {!be?<div className='flex py-2'>
           <button
             onClick={() => {
               router.push("/");
@@ -218,12 +231,12 @@ function State() {
           >
             {`${router.query.state}`}
           </button>
-        </div>
+        </div>:<></>}
 
         <SearchMenu />
       </div>
       <div className='px-5 md:px-10 lg:px-20 font-semibold mt-3'>Total Agencies: {byStateData.totalPages * 10}</div>
-      <div className="px-5 md:px-10 lg:px-20 text-2xl font-semibold pb-1">List of Top {router.query.state} SEO Agencies</div>
+      {!be?<div className="px-5 md:px-10 lg:px-20 text-2xl font-semibold pb-1">List of Top {router.query.state} SEO Agencies</div>:<></>}
       <div className='px-5 md:px-10 lg:px-20 space-y-7 mb-11'>
         {byStateData?.data?.map((element) => {
           return (
@@ -236,13 +249,13 @@ function State() {
         })}
       </div>
       {/* pagination */}
-      <div className='flex justify-center p-8'>
+      {!be?<div className='flex justify-center p-8'>
         <div className='flex gap-5'>
           <button
             onClick={prevPage}
             disabled={
               router.query.page == "NaN" ||
-                router.query.page == "1" ||
+                router.query.page==undefined||
                 (router.query &&
                   Object.keys(router.query).length === 0 &&
                   router.query.constructor === Object)
@@ -251,7 +264,7 @@ function State() {
             }
             className={
               router.query.page == "NaN" ||
-                router.query.page == "1" ||
+              router.query.page==undefined||
                 (router.query &&
                   Object.keys(router.query).length === 0 &&
                   router.query.constructor === Object)
@@ -298,8 +311,12 @@ function State() {
               </button>
             )}
             {
-              <button className='border-2 p-1 px-3 rounded-lg bg-green-400'>
-                {router.query.page}
+              <button className='border-2 p-1 px-3 rounded-lg' onClick={() =>
+                  router.push(
+                    `/seo/${router.query.state}?page=2`
+                  )
+                }>
+                {router.query.page?router.query.page:2}
               </button>
             }
             {router.query.page < byStateData?.totalPages - 1 && (
@@ -325,11 +342,16 @@ function State() {
                   )
                 }
               >
-                {router.query.page - 1 < byStateData?.totalPages - 2
+                {(router.query.page - 1) < byStateData?.totalPages - 2
                   ? "..."
-                  : router.query.page - 1}
+                  : router.query.page?router.query.page:0 - 1}
               </button>
             )}
+             {
+            router.query.page?<></>:<button className='border-2 p-1 px-3 rounded-lg'>
+              ...
+              </button>
+            }
             {router.query.page != byStateData?.totalPages && (
               <button
                 className='border-2 p-1 px-3 rounded-lg'
@@ -358,7 +380,7 @@ function State() {
             <BiChevronRight />
           </button>
         </div>
-      </div>
+      </div>:<></>}
     </>
   );
 }
