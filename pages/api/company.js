@@ -4,7 +4,7 @@ import { readFile } from "fs/promises";
 let data;
 
 export default async function handler(req, res) {
-  // url == `http://209.38.244.1:3000/api/company?title={}`
+  // url == `http://143.244.138.164/agency/api/company?title={}`
 
   if (!data) {
     const jsonDirectory = path.join(process.cwd(), "json");

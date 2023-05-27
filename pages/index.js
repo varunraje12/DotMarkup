@@ -15,7 +15,7 @@ const index = () => {
     <>
       <Head>
         <meta name="robots" content="noindex,nofollow"></meta>
-        <link rel='canonical' href='http://209.38.244.1:3000/' key='canonical'></link>
+        <link rel='canonical' href='http://143.244.138.164/agency/' key='canonical'></link>
       </Head>
       <div>
         { /********** Hero *********/}

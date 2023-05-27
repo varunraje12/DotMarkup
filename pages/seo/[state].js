@@ -22,7 +22,7 @@ function State() {
     const byStateSearch = function () {
       if (router.query.state) {
         fetch(
-          `http://209.38.244.1:3000/api/cities?states=${router.query.state}&page=${router.query.page ? router.query.page : 0
+          `http://143.244.138.164/agency/api/cities?states=${router.query.state}&page=${router.query.page ? router.query.page : 0
           }`
         )
           .then((res) => {
@@ -107,7 +107,7 @@ function State() {
       }
       //   if (router.query.state && router.query.city) {
       //     fetch(
-      //       `http://209.38.244.1:3000/api/cities?states=${
+      //       `http://143.244.138.164/agency/api/cities?states=${
       //         router.query.cities
       //       }&city=${router.query.city}&page=${
       //         router.query.page ? router.query.page : 1

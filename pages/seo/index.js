@@ -13,7 +13,7 @@ function Index() {
   useEffect(() => {
     function defaultData() {
       fetch(
-        `http://209.38.244.1:3000/api/staticdata?page=${router.query.page ? router.query.page : 1
+        `http://143.244.138.164/agency/api/staticdata?page=${router.query.page ? router.query.page : 1
         }`
       )
         .then((res) => {
@@ -94,13 +94,13 @@ function Index() {
 
   function nextPage() {
     router.push(
-      `http://209.38.244.1:3000?page=${router.query.page ? router.query.page * 1 + 1 : 2
+      `http://143.244.138.164/agency?page=${router.query.page ? router.query.page * 1 + 1 : 2
       }`
     );
   }
 
   function prevPage() {
-    router.push(`http://209.38.244.1:3000?page=${router.query.page * 1 - 1}`);
+    router.push(`http://143.244.138.164/agency?page=${router.query.page * 1 - 1}`);
   }
   useEffect(() => {
     function name() {
@@ -158,7 +158,7 @@ function Index() {
         <title>DotMarkup - Leading Marketplace for Finding Business Services</title>
         <meta name='description' content='DotMarkup is your one-stop-shop to search, find, and decide on business service providers. Read verified reviews from 260K+ global providers to find the right fit.'></meta>
         <meta name="robots" content="noindex,nofollow"></meta>
-        <link rel='canonical' href='http://209.38.244.1:3000/seo' key='canonical'></link>
+        <link rel='canonical' href='http://143.244.138.164/agency/seo' key='canonical'></link>
       </Head>
       <div className='px-5 md:px-10 lg:px-20'>
         <div>

@@ -18,7 +18,7 @@ const SearchMenu = () => {
 
   useEffect(() => {
     function getAllData() {
-      fetch("http://209.38.244.1:3000/api/staticdata")
+      fetch("http://143.244.138.164/agency/api/staticdata")
         .then((res) => {
           return res.json();
         })
@@ -32,9 +32,9 @@ const SearchMenu = () => {
 
   // useEffect(() => {
   //   if (dropDownValue) {
-  //     // router.push(`http://209.38.244.1:3000?cities=${dropDownValue}`);
+  //     // router.push(`http://143.244.138.164/agency?cities=${dropDownValue}`);
   //     router.push(
-  //       `http://209.38.244.1:3000/?cities=${input}&city=${dropDownValue}&page=1`
+  //       `http://143.244.138.164/agency/?cities=${input}&city=${dropDownValue}&page=1`
   //     );
   //   }
   // }, [dropDownValue]);
@@ -85,7 +85,7 @@ const SearchMenu = () => {
           onClick={() => {
             if(input.indexOf('?')==-1){
               st(false);
-            router.push(`http://209.38.244.1:3000/seo/${input}`),
+            router.push(`http://143.244.138.164/agency/seo/${input}`),
               dropdown();
             }
             else{

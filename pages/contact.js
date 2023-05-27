@@ -13,7 +13,7 @@ function Contact() {
       <Head>
         <title>DotMarkup | Contact</title>
         <meta name="robots" content="noindex,nofollow"></meta>
-        <link rel='canonical' href='http://209.38.244.1:3000/contact' key='canonical'></link>
+        <link rel='canonical' href='http://143.244.138.164/agency/contact' key='canonical'></link>
       </Head>
       <div className='flex justify-center bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 h-96 w-full '>
         <h2 className='flex items-center text-center text-5xl font-bold text-white'>

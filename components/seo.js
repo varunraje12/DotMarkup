@@ -15,7 +15,7 @@
 
 //   useEffect(() => {
 //     function ListingCardDetail() {
-//       fetch(`http://209.38.244.1:3000/api/staticdata?page=${page ? page : 1}`)
+//       fetch(`http://143.244.138.164/agency/api/staticdata?page=${page ? page : 1}`)
 //         .then((res) => {
 //           return res.json();
 //         })
@@ -30,7 +30,7 @@
 //     const search = function () {
 //       if (cities) {
 //         fetch(
-//           `http://209.38.244.1:3000/api/cities?states=${cities}&page=1
+//           `http://143.244.138.164/agency/api/cities?states=${cities}&page=1
 //           `
 //         )
 //           .then((res) => {
@@ -40,7 +40,7 @@
 //       }
 //       if (cities && city) {
 //         fetch(
-//           `http://209.38.244.1:3000/api/cities?states=${cities}&city=${city}&page=${page ? page : 1
+//           `http://143.244.138.164/agency/api/cities?states=${cities}&city=${city}&page=${page ? page : 1
 //           }`
 //         )
 //           .then((res) => {
@@ -56,7 +56,7 @@
 
 //   function nextPage() {
 //     fetch(
-//       `http://209.38.244.1:3000/api/cities?state=${cities}&page=${page ? page * 1 + 1 : 2
+//       `http://143.244.138.164/agency/api/cities?state=${cities}&page=${page ? page * 1 + 1 : 2
 //       }`
 //     )
 //       .then((res) => {
@@ -69,7 +69,7 @@
 
 //   function prevPage() {
 //     fetch(
-//       `http://209.38.244.1:3000/api/cities?state=${cities}&page=${page * 1 - 1}`
+//       `http://143.244.138.164/agency/api/cities?state=${cities}&page=${page * 1 - 1}`
 //     )
 //       .then((res) => {
 //         return res.json();
@@ -135,7 +135,7 @@
 //                 <button
 //                   onClick={() => {
 //                     fetch(
-//                       `http://209.38.244.1:3000/api/cities?state=${cities}&page=1`
+//                       `http://143.244.138.164/agency/api/cities?state=${cities}&page=1`
 //                     )
 //                       .then((res) => {
 //                         return res.json();
@@ -151,7 +151,7 @@
 //                 <button
 //                   onClick={() => {
 //                     fetch(
-//                       `http://209.38.244.1:3000/api/cities?state=${cities}&page=2`
+//                       `http://143.244.138.164/agency/api/cities?state=${cities}&page=2`
 //                     )
 //                       .then((res) => {
 //                         return res.json();
@@ -167,7 +167,7 @@
 //                 <button
 //                   onClick={() => {
 //                     fetch(
-//                       `http://209.38.244.1:3000/api/cities?state=${cities}&page=3`
+//                       `http://143.244.138.164/agency/api/cities?state=${cities}&page=3`
 //                     )
 //                       .then((res) => {
 //                         return res.json();
